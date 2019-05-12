@@ -1,5 +1,7 @@
 pipeline {
     agent any
+      tools {nodejs "slave10"}
+
 
     stages {
         stage ('Compile Stage') {
