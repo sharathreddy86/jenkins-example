@@ -3,6 +3,7 @@ pipeline {
       
     stages {
         stage ('Compile Stage') {
+            agent { label 'slave10' }
 
             steps {
                
@@ -12,6 +13,7 @@ pipeline {
         }
 
         stage ('Testing Stage') {
+            agent { label 'slave10 }
 
             steps {
                 
@@ -22,6 +24,8 @@ pipeline {
 
 
         stage ('Deployment Stage') {
+            agent { label 'slave10' }
+
             steps {
                 
                     sh 'mvn package'
